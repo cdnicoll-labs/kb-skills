@@ -1,5 +1,0 @@
-{
-  "env": {
-    "{{TOKEN_VAR}}": "PASTE-YOUR-TOKEN-HERE"
-  }
-}

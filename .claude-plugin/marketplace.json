@@ -8,8 +8,8 @@
     {
       "name": "kb-core",
       "source": "./plugins/kb-core",
-      "description": "Client-neutral skills for a shared knowledge base: save, retrospective, decision, ingest, profile, workspace setup.",
-      "version": "0.5.2"
+      "description": "Client-neutral skills for a shared knowledge base: save, retrospective, decision, ingest, profile.",
+      "version": "0.6.0"
     }
   ]
 }

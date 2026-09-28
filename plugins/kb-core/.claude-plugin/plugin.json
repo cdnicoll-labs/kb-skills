@@ -2,7 +2,7 @@
   "name": "kb-core",
   "displayName": "Knowledge base: core skills",
   "description": "Client-neutral skills for writing to a shared knowledge base served by a kb-<client> MCP server.",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "author": {
     "name": "Cody Nicoll"
   }

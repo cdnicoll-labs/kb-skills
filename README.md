@@ -25,16 +25,14 @@ plugins/kb-core/skills/kb-ingest/           turn an outside document into knowle
 plugins/kb-core/skills/kb-retrospective/    run and record a retrospective
 plugins/kb-core/skills/kb-decision/         record a decision and the options considered
 plugins/kb-core/skills/kb-profile/          write or update your own profile, and only your own
-plugins/kb-core/skills/kb-setup-workspace/  create a person's folder for one client, and its connection
 ```
-
-`kb-setup-workspace` carries `templates/` for the files it writes into a new workspace. Placeholders are
-`{{NAME}}`, and every one a template uses has to be documented in the skill. `npm run check:plugins` in
-`shared-context` renders them and fails on a typo, or on JSON that would not parse.
 
 No client vocabulary belongs here. Anything that mentions a particular client's sites, products, or people goes in that client's `kb-<client>` repo.
 
-These skills talk to a `kb-<client>` MCP server, which is run separately and is not public.
+These skills talk to a `kb-<client>` MCP server, which is run separately and is not public. The skills carry no connection. People reach the server one of two ways:
+
+- **Claude apps:** add this marketplace and the client's, add the server as a custom connector, and sign in.
+- **A client hub in Claude Code:** the hub's `.claude/settings.json` enables the plugins and its `.mcp.json` points at the server; the first session asks you to sign in.
 
 ## Writing a skill
 

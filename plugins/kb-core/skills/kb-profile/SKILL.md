@@ -1,6 +1,6 @@
 ---
 name: kb-profile
-description: Write or update your own profile in the team knowledge base (a kb-<client> MCP server) by answering a few questions, so teammates know your role, what to come to you for, and how you like to work. Use when someone says add my profile, introduce me, who I am, update my profile, or on a person's first day after their workspace is set up. Only ever for the person asking, never about someone else.
+description: Write or update your own profile in the team knowledge base (a kb-<client> MCP server) by answering a few questions, so teammates know your role, what to come to you for, and how you like to work. Use when someone says add my profile, introduce me, who I am, update my profile, or on a person's first day after they connect to the knowledge base. Only ever for the person asking, never about someone else.
 ---
 
 # Your profile
