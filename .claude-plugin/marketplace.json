@@ -1,0 +1,15 @@
+{
+  "name": "kb-skills",
+  "description": "Client-neutral knowledge base skills for Claude Code. Add alongside your client's own marketplace.",
+  "owner": {
+    "name": "Cody Nicoll"
+  },
+  "plugins": [
+    {
+      "name": "kb-core",
+      "source": "./",
+      "description": "Client-neutral skills for a shared knowledge base: save, retrospective, decision, ingest, profile, workspace setup.",
+      "version": "0.5.1"
+    }
+  ]
+}

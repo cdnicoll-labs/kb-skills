@@ -1,0 +1,10 @@
+.DS_Store
+.env
+.env.*
+*.pem
+
+# Your knowledge base token lives here. Never commit it.
+.claude/settings.local.json
+
+# Anything you would not want on a backup remote
+_private/

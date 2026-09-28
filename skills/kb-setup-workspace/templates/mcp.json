@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "kb-{{CLIENT}}": {
+      "type": "http",
+      "url": "{{URL}}",
+      "headers": {
+        "Authorization": "Bearer {{TOKEN_REF}}"
+      }
+    }
+  }
+}
