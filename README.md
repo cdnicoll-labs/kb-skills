@@ -2,25 +2,30 @@
 
 The client-neutral half of the shared knowledge base: one Claude Code plugin, `kb-core`, with the skills everyone uses whatever client they are working for.
 
-This repo root *is* the plugin, and it is also its own marketplace, so people add it directly:
+This repo is a marketplace holding one plugin, `kb-core`, laid out the way Anthropic's own marketplace is: the plugin in `plugins/kb-core/`, the marketplace at the root. It is public, so adding it needs no GitHub login.
+
+In the Claude app: **Settings → Plugins → Add → Add marketplace**, then `https://github.com/cdnicoll-labs/kb-skills`. In Claude Code:
 
 ```bash
-claude plugin marketplace add cdnicoll-labs/kb-skills
+claude plugin marketplace add https://github.com/cdnicoll-labs/kb-skills.git
 claude plugin install kb-core@kb-skills
 ```
 
-Client marketplaces do not list `kb-core` themselves. A cross-repo entry is fetched over SSH and fails
-for anyone without an SSH key on GitHub (tested 2026-09-24), so each person adds this marketplace
-alongside their client's.
+Use the full `https://` URL, not `owner/repo`. The shorthand records an SSH remote, and updates then fail
+for anyone without an SSH key on GitHub (found 2026-09-24).
+
+Client marketplaces do not list `kb-core` themselves; each person adds this marketplace alongside their
+client's.
 
 ```
-.claude-plugin/plugin.json   the kb-core manifest
-skills/kb-save/              draft, get a yes, then save a document
-skills/kb-ingest/            turn an outside document into knowledge
-skills/kb-retrospective/     run and record a retrospective
-skills/kb-decision/          record a decision and the options considered
-skills/kb-profile/           write or update your own profile, and only your own
-skills/kb-setup-workspace/   create a person's folder for one client, and its connection
+.claude-plugin/marketplace.json             the marketplace, listing plugins/kb-core
+plugins/kb-core/.claude-plugin/plugin.json  the kb-core manifest
+plugins/kb-core/skills/kb-save/             draft, get a yes, then save a document
+plugins/kb-core/skills/kb-ingest/           turn an outside document into knowledge
+plugins/kb-core/skills/kb-retrospective/    run and record a retrospective
+plugins/kb-core/skills/kb-decision/         record a decision and the options considered
+plugins/kb-core/skills/kb-profile/          write or update your own profile, and only your own
+plugins/kb-core/skills/kb-setup-workspace/  create a person's folder for one client, and its connection
 ```
 
 `kb-setup-workspace` carries `templates/` for the files it writes into a new workspace. Placeholders are
@@ -45,7 +50,7 @@ And keep skills simple. Every line is read on every use. Rules stay; examples an
 
 ## Changing a skill
 
-Edit the skill, bump `version` in `.claude-plugin/plugin.json`, and bump the matching `kb-core` entry in every client marketplace that lists it. Nothing propagates without the version bump. Everyone picks the change up on their next session; there is no gatekeeper and no message to send.
+Edit the skill, bump `version` in `plugins/kb-core/.claude-plugin/plugin.json` and in this repo's `.claude-plugin/marketplace.json`. Nothing propagates without the version bump. Everyone picks the change up on their next session; there is no gatekeeper and no message to send.
 
 ```bash
 claude plugin validate --strict .
