@@ -1,6 +1,6 @@
 ---
 name: kb-save
-description: Save knowledge to the team's shared knowledge base (a kb-<client> MCP server). Use when the user wants to add, record, capture, publish, or update something for the team, such as a how-to, a fact about a system, a lesson, or a note, and no more specific kb skill fits. Other kb skills finish by following this one's closing steps.
+description: Save knowledge to the team's shared knowledge base (an MCP server named kb- plus the client name). Use when the user wants to add, record, capture, publish, or update something for the team, such as a how-to, a fact about a system, a lesson, or a note, and no more specific kb skill fits. Other kb skills finish by following this one's closing steps.
 ---
 
 # Save to the knowledge base
